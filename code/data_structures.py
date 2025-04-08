@@ -38,6 +38,62 @@ ll = LinkedList()
 ll.append(1)
 ll.append(2)
 ll.prepend(5)
-
+print("Linked List:")
 print(ll.print_list())
 
+
+# Stack
+from collections import deque  # Вместо списка для быстрых операций добавления/удаления (О(1))
+
+
+class Stack:
+    def __init__(self):
+        """
+        Инициализация массива
+        """
+        self.items = deque()
+
+    def push(self, item):
+        """
+        Добавление элемента на вершину
+        """
+        self.items.append(item)
+
+    def pop(self):
+        """
+        Удаление элемента с вершины
+        """
+        if not self.is_empty():
+            return self.items.pop()
+        raise IndexError("pop from empty stack")
+
+    def peek(self):
+        """
+        Посмотреть какая сейчас вершина
+        """
+        if not self.is_empty():
+            return self.items[-1]
+
+    def is_empty(self):
+        """
+        Проверка на пустоту стека
+        """
+        return len(self.items) == 0
+
+    def size(self):
+        """
+        Узнать размер стека
+        """
+        return len(self.items)
+
+
+stack = Stack()
+stack.push(10)
+stack.push(20)
+stack.push(30)
+print("\nStack:")
+
+print("stack size:", stack.size())
+print("stack pop:", stack.pop())  # 30 (последний добавленный элемент)
+print("stack peek:", stack.peek())  # 20 (вершина после удаления 30)
+print("stack empty:", stack.is_empty())
