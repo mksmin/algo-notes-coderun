@@ -5,3 +5,5 @@
 [Алгоритмы](notes%2Falgos.md)  
 
 [Решение задач на CodeRun](code%2Fsolutions)
+
+![img.png](src/images/img.png)
